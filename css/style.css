@@ -117,6 +117,15 @@ a:hover .arrow { transform: translateX(3px); }
 }
 .btn-ghost:hover { color: var(--white); border-color: var(--white); }
 
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.88rem; font-weight: 700;
+  color: var(--white); border: 1px solid rgba(255,255,255,0.25);
+  padding: 14px 28px; border-radius: 100px;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); background: rgba(255,107,43,0.06); }
+
 .hero-social-proof { display: flex; align-items: center; gap: 12px; }
 .sp-avatars { display: flex; }
 .sp-avatar {
@@ -293,6 +302,10 @@ a:hover .arrow { transform: translateX(3px); }
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 24px; margin-top: 48px; align-items: start;
 }
+.pricing-grid-3 {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px; margin-top: 48px; align-items: start;
+}
 .pricing-card {
   background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
   border-radius: 20px; padding: 44px 40px; position: relative;
@@ -313,7 +326,12 @@ a:hover .arrow { transform: translateX(3px); }
   line-height: 1; margin-bottom: 16px;
 }
 .pricing-amount span { font-size: 1.2rem; color: rgba(245,240,235,0.4); font-weight: 400; }
+.pricing-setup { font-size: 0.78rem; color: rgba(245,240,235,0.35); margin-bottom: 16px; margin-top: -10px; }
 .pricing-desc { font-size: 0.9rem; color: rgba(245,240,235,0.5); margin-bottom: 28px; line-height: 1.65; }
+.pricing-card--featured {
+  border-color: var(--accent); background: rgba(255,107,43,0.06);
+  transform: scale(1.02); transform-origin: top center;
+}
 .pricing-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
 .pricing-list li {
   font-size: 0.88rem; color: rgba(245,240,235,0.7);
@@ -452,7 +470,8 @@ a:hover .arrow { transform: translateX(3px); }
 
 /* ── RESPONSIVE ───────────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
-  .problem-grid, .pricing-wrap { grid-template-columns: 1fr; }
+  .problem-grid, .pricing-wrap, .pricing-grid-3 { grid-template-columns: 1fr; }
+  .pricing-card--featured { transform: none; }
   .steps { grid-template-columns: 1fr 1fr; }
   .step { border-bottom: 1px solid rgba(255,255,255,0.07); }
   .accounts-grid { grid-template-columns: 1fr; }
