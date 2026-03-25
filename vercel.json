@@ -1,7 +1,4 @@
 {
-  "functions": {
-    "api/lead.py": { "runtime": "python3.12" }
-  },
   "routes": [
     { "src": "/api/lead", "dest": "/api/lead.py" },
     { "src": "/(.*)",     "dest": "/$1" }
